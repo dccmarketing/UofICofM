@@ -1,0 +1,19 @@
+
+name = UofICofM
+description = A custom theme built for the College of Media at the University of Illinois by DCC Marketing.
+package = Core
+version = VERSION
+core = 7.x
+
+stylesheets[all][] = css/style.css
+
+regions[content] = Content
+regions[footer] = Footer
+regions[header] = Header
+regions[page_top] = Page top
+regions[sidebar] = Sidebar
+
+
+version = "7.33"
+project = "drupal"
+datestamp = "1415375131"
