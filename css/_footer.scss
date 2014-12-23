@@ -1,0 +1,236 @@
+/* ------------------ Footer ------------------ */
+
+footer {
+	background-color: $color__bg-header;
+	box-shadow 		: inset 0 0 5em 1em $color_shadow-inset-header;
+	min-height 		: 60px;
+	overflow 		: auto;
+	padding 		: 1.5em;
+	position 		: relative;
+
+	.wrap {
+		padding: 1em 0;
+	}
+
+	li {
+		list-style: none;
+		display: inline-block;
+	}
+
+	a {
+		color: $color__text-footer-links;
+	}
+
+	.block {
+
+		@media screen and (min-width: $bp__tablet) {
+			display 		: inline-block;
+			vertical-align 	: top;
+		}
+
+		.content {
+			margin: 0;
+		}
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.menu {
+		margin: 0;
+	}
+}
+
+#block-menu-menu-info-for-menu {
+	font-size 		: $font__size-mobile-menu;
+	margin-bottom 	: 1em;
+	display 		: block;
+
+	@media screen and (min-width: $bp__menu-button) {
+		margin 		: 0;
+		text-align 	: center;
+	}
+
+	@media screen and (min-width: $bp__tablet) {
+		font-size 	: initial;
+		//margin 		: 5px 0 0;
+		float 		: left;
+		text-align 	: initial;
+	}
+
+	@media screen and (min-width: $bp__laptop) {
+		font-size 	: $font__size-header-menu;
+	}
+
+	&:after {
+		@include clearfix-after();
+	}
+
+	h2 {
+		font-size 		: $font__size-mobile-menu;
+		text-align 		: center;
+		color 			: $color__text-infofor;
+		text-transform 	: uppercase;
+
+		@media screen and (min-width: $bp__menu-button) {
+			display 		: inline-block;
+			vertical-align 	: top;
+			padding 		: 1em 0;
+		}
+
+		@media screen and (min-width: $bp__tablet) {
+			font-size 	: initial;
+			text-align 	: initial;
+		}
+
+		@media screen and (min-width: $bp__laptop) {
+			font-size 	: $font__size-header-menu;
+		}
+	}
+
+	.content {
+
+		@media screen and (min-width: $bp__menu-button) {
+			display 		: inline-block;
+			vertical-align 	: top;
+		}
+	}
+
+	li {
+		text-align 	: center;
+		width 		: 49%;
+		margin 		: 0;
+		padding 	: 0.7em;
+
+		@media screen and (min-width: $bp__menu-button) {
+			width: initial;
+		}
+
+		&.first {
+
+			@media screen and (min-width: $bp__tablet) {
+				padding-left: 0;
+			}
+		}
+	}
+
+	a {
+		display: block;
+
+		@media screen and (min-width: $bp__tablet) {
+			display: inherit;
+		}
+	}
+}
+
+#block-menu-menu-social-links-menu {
+	margin-bottom: 1.5em;
+
+	@media screen and (min-width: $bp__tablet) {
+		float 			: right;
+		margin-bottom 	: 0;
+	}
+
+	@media screen and (min-width: $bp__laptop) {
+		margin 	: 0 0 0 25px;
+		float 	: left;
+	}
+
+	&:after {
+		@include clearfix-after();
+	}
+
+	.menu {
+		text-align: center;
+	}
+
+	.leaf {
+		position 	: relative;
+		margin 		: 0.25em;
+	}
+
+	a[href*="facebook.com"],
+	a.facebook {
+		@include svgicon(facebook);
+	}
+
+	a[href*="flickr.com"],
+	a.flickr {
+		@include svgicon(flickr);
+	}
+
+	a[href*="linkedin.com"],
+	a.linkedin {
+		@include svgicon(linkedin);
+	}
+
+	a[href*="movie"],
+	a[href*="film"] {
+		@include svgicon(film);
+	}
+
+	a[href$=".rss"], 
+	a[href$="rss.xml"], 
+	a[href*="/feed/"],
+	a[href*="/rss/"] {
+		@include svgicon(rss);
+	}
+
+	a[href*="twitter.com"],
+	a.twitter {
+		@include svgicon(twitter);
+	}
+
+	a[href*="youtube.com"],
+	a.youtube {
+		@include svgicon(youtube);
+	}
+
+	a[href*="itunes.apple.com"] {
+		@include svgicon(apple);
+	}
+}
+
+div#block-block-2 {
+	display 	: block;
+	background 	: $color__bg-external-links;
+
+	@media screen and (min-width: $bp__tablet) {
+		margin-top	: 1em;
+		float 		: left;
+		text-align 	: center;
+		width 		: 100%;
+	}
+
+	@media screen and (min-width: $bp__laptop) {
+		width: 42%;
+		float: right;
+		margin: 0;	
+	}
+
+	.external-links {
+		margin 		: 0;
+		overflow 	: auto;
+		text-align 	: center;
+
+		@media screen and (min-width: $bp__tablet) {
+			max-height 	: 40px;
+		}
+	}
+
+	li {
+		padding: 1em 2em;
+		max-width: 250px;
+		margin: 0 auto;
+		display: block;
+
+		@media screen and (min-width: $bp__tablet) {
+			padding: 0 0.5em;
+			display: inline-block;
+		}
+	}
+
+	
+}
+

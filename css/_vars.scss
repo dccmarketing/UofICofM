@@ -1,0 +1,93 @@
+/**
+ * Color Variables
+ */
+$light: #fff;
+$med: #BABABA;
+$dark: #020202;
+$blue: #4B86A6; // lightest blue in gradient & search field bg
+$medblue: #1677a0; // header menu bg
+$darkblue: #005581; // body text
+$gradblue: #003448; // darkest blue in gradient
+$turq: #00a8cd; // "more" link
+$liteorange: #e78f31; // page_top menu bg
+$orange: #f47b20; // feature & sidebar headers & buttons
+$cream: #FFF8D4; // feature box & sidebar bg
+$yellow: #ffe14f; // "Info For" text color
+
+
+/**
+ * Globals
+ */
+$default-width 		: 1050px;
+$headspace 			: 100px;
+$headspace-mobile 	: 176px;
+
+
+/**
+ * Color Assignments
+ */
+
+// Backgrounds
+$color__bg-body 			: $med;
+$color__bg-header 			: $medblue;
+$color__bg-mono-text 		: $cream;
+$color__bg-page 			: $light;
+$color__bg-form 			: $blue;
+$color__bg-menu-item-hover 	: $orange;
+$color__bg-external-links 	: $light;
+$color__bg-header-menu 		: $blue;
+$color__bg-above-content 	: $orange;
+$color__bg-below-content 	: $cream;
+$color__bg-more-news 		: $orange;
+$color__bg-sidebar 			: $cream;
+
+// Shadows
+$color_shadow-inset-header 	: $gradblue;
+
+// Text
+$color__text-footer-links 		: $light;
+$color__text-infofor 			: $yellow;
+$color__text-main 				: $darkblue;
+$color__text-links 				: $orange;
+$color__text-form 				: $light;
+$color__text-menu-item 			: $light;
+$color__text-placeholder 		: $light;
+$color__text-above-content 		: $light;
+$color__text-contentblock-title : $orange;
+$color__text-teaser 			: $darkblue;
+$color__text-teaser-readmore 	: $turq;
+$color__text-more-news 			: $light;
+$color__text-sidebar 			: $darkblue;
+
+// Borders
+
+
+// SVGs
+
+
+
+
+/**
+ * Font Assignments
+ */
+$font__sans 				: Dosis, sans-serif;
+$font__serif 				: Georgia, "Times New Roman", Times, serif;
+$font__mono 				: Menlo, Consolas, "Andale Mono", "Lucida Console", "Nimbus Mono L", "DejaVu Sans Mono", monospace, "Courier New";
+$font__line-height-body 	: 1.5;
+$font__size-header-menu		: 14px;
+$font__size-above-content 	: 26px;
+$font__size-mobile-menu 	: 25px;
+
+
+/**
+ * Breakpoints
+ */
+
+$bp__menu-button: 600px;
+$bp__tablet 	: 768px;
+$bp__laptop 	: 1050px;
+
+
+
+
+

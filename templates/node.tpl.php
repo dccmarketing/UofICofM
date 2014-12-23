@@ -77,8 +77,47 @@
  * @see template_preprocess_node()
  * @see template_process()
  */
-?>
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+
+if ( $teaser ) {
+
+?><div class="teaser-container <?php print $classes; ?>"<?php print $attributes; ?>>
+	<div class="teaser-content">
+	
+		<div class="teaser-text">
+			<h2 class="teaser-title"><?php
+
+				print l( $title, 'node/'.$nid, array( 'html'=>TRUE ) );
+				
+				if( $sticky ) {
+				
+					?><span class="teaser-sticky"><?php print t( $sticky_text ); ?></span><?php
+
+				}
+
+			?></h2><?php
+
+				hide( $content['comments'] );
+				hide( $content['links'] );
+				hide( $content['field_tags'] ); // hide tags
+				print render( $content );
+
+				if ($display_submitted): ?>
+					<div class="teaser-created">
+						<div class="teaser-created-month">
+							<?php print date( 'd',$node->created ); ?>				
+							<?php print t( date( 'M',$node->created ) ); ?>
+						</div>			
+					</div><?php
+				endif;
+
+				?><span class="teaser-readmore"><?php print l(t('MORE>>'), 'node/' . $nid, array('attributes' => array('class' => t('node-readmore-link')))); ?></span>
+			</div>
+		</div>
+	</div><?php
+	
+} else {
+
+?><div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
 	<?php print render( $title_prefix ); ?>
 	<?php if ( !$page ) : ?>
@@ -121,4 +160,6 @@
 
 	<?php print render( $content['comments'] ); ?>
 
-</div>
+</div><?
+
+}

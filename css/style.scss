@@ -1,0 +1,271 @@
+/* --------------------------------------------------------------*/
+@import "vars";
+@import "mixins";
+@import "reset";
+@import "tables";
+
+@import "global";
+@import "header";
+@import "footer";
+@import "content";
+@import "sidebars";
+@import "menus";
+@import "comments";
+@import "admin";
+@import "breadcrumbs";
+@import "forms";
+@import "search";
+@import "overlays";
+@import "tabs";
+
+
+
+/* ---------- Basic Layout Styles ----------- */
+
+#page-wrapper {
+	min-height: 100%;
+	min-width: $default-width;
+	background: #292929;
+}
+
+.with-secondary-menu .region-header {
+	margin-top: 3em;
+}
+
+.without-secondary-menu .region-header {
+	margin-top: 15px;
+}
+
+#secondary-menu {
+	position: absolute;
+	right: 0; /* LTR */
+	top: 0;
+	width: 480px;
+}
+
+.no-sidebars {
+	.comment-form .form-text {
+		width: 800px;
+	}
+
+	#content {
+		width: 960px;
+		float: none;
+	}
+}
+
+.one-sidebar {
+	#content {
+		padding: 0 2em;
+
+		@media screen and (min-width: $bp__tablet) {
+			@include margcols( 10, 7, 0, 'float' );
+			float: right;
+		}
+	}
+
+	.comment-form .form-text {
+		width: 500px;
+	}
+}
+
+.two-sidebars {
+	.comment-form .form-text {
+		width: 320px;
+	}
+
+	#content {
+		width: 480px;
+	}
+}
+
+#sidebar-second {
+	width: 240px;
+}
+
+#main-wrapper {
+	min-height: 300px;
+	background: #ffffff;
+}
+
+.ui-widget {
+	font-family: $font__serif;
+}
+
+
+ul.primary,
+div.field-type-taxonomy-term-reference,
+div.meta,
+p.comment-time {
+	font-family: $font__sans;
+}
+
+/* ------------------ Reset Styles ------------------ */
+
+caption {
+	text-align: left; /* LTR */
+	font-weight: normal;
+}
+blockquote {
+	background: #f7f7f7;
+	border-left: 1px solid #bbb;
+	font-style: italic;
+	margin: 1.5em 10px;
+	padding: 0.5em 10px;
+
+	&:before,
+	&:after {
+		color: #bbb;
+		content: "\201C";
+		font-size: 3em;
+		line-height: 0.1em;
+		margin-right: 0.2em;
+		vertical-align: -.4em;
+	}
+
+	&:after {
+		content: "\201D";
+	}
+
+	> p:first-child {
+		display: inline;
+	}
+}
+a.feed-icon {
+	display: inline-block;
+	padding: 15px 0 0 0;
+}
+
+/* ----------------- Featured ----------------- */
+
+#featured {
+	text-align: center;
+	font-size: 1.643em;
+	font-weight: normal;
+	line-height: 1.4;
+	padding: 20px 0 45px;
+	margin: 0;
+	background: #f0f0f0;
+	background: rgba(30, 50, 10, 0.08);
+	border-bottom: 1px solid #e7e7e7;
+	text-shadow: 1px 1px #fff;
+
+	h2 {
+		font-size: 1.174em;
+		line-height: 1;
+	}
+
+	p {
+		margin: 0;
+		padding: 0;
+	}
+
+	div.section {
+		width: $default-width;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+
+/* --------------- Highlighted ---------------- */
+
+#highlighted {
+	border-bottom: 1px solid #d3d7d9;
+	font-size: 120%;
+}
+
+/* ------------------- Help ------------------- */
+
+.region-help {
+	border: 1px solid #d3d7d9;
+	padding: 0 1.5em;
+	margin-bottom: 30px;
+}
+
+/* ---------------- Messages	----------------- */
+
+#messages {
+	padding: 20px 0 5px;
+	margin: 0 auto;
+
+	div.section {
+		width: $default-width;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+.featured #messages {
+	background: #f0f0f0;
+	background: rgba(30, 50, 10, 0.08);
+}
+div.messages {
+	margin: 8px 15px;
+	font-family: $font__sans;
+}
+
+/* -------------- User Profile	 -------------- */
+
+.profile .user-picture {
+	float: none;
+}
+
+/* -------------- Password Meter	------------- */
+
+.confirm-parent,
+.password-parent {
+	width: 34em;
+}
+.password-parent,
+div.form-item div.password-suggestions {
+	position: relative;
+}
+.password-strength-text,
+.password-strength-title,
+div.password-confirm {
+	font-size: 0.82em;
+}
+.password-strength-text {
+	margin-top: 0.2em;
+}
+div.password-confirm {
+	margin-top: 2.2em;
+	width: 20.73em;
+}
+
+/* -------------- Other Overrides ------------- */
+
+div.password-suggestions {
+	border: 0;
+}
+.ui-widget-overlay {
+	background: #222222;
+	opacity: 0.7;
+}
+div.vertical-tabs .vertical-tabs-panes fieldset.vertical-tabs-pane {
+	padding: 1em;
+}
+
+#forum {
+	.name {
+		font-size: 1.083em;
+	}
+
+	 .description {
+		font-size: 1em;
+	}
+}
+
+/* -------------- Shortcut Links -------------- */
+
+.shortcut-wrapper {
+	margin: 2.2em 0 1.1em 0; /* Same as usual h1#page-title margin. */
+
+	h1#page-title {
+		float: left; /* LTR */
+		margin: 0;
+	}
+}
+div.add-or-remove-shortcuts {
+	padding-top: 0.9em;
+}

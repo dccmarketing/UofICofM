@@ -76,41 +76,12 @@ function uoficofm_preprocess_block( &$variables ) {
  * Implements theme_menu_tree().
  */
 function uoficofm_menu_tree( &$variables ) {
-
-	//var_dump( $variables );
 	
-	return '<ul class="menu clearfix">' . $variables['tree'] . '</ul>';
+	//	var_dump( $variables['tree'] );
+
+	return '<ul class="menu group">' . $variables['tree'] . '</ul>';
 
 } // uoficofm_menu_tree()
-
-function menu_tree__menu_info_for_menu( &$variables ) {
-
-	//echo '<pre>'; print_r( $variables ); echo '</pre>';
-	
-	return '<span class="infoforlabel">Info For:</span><ul class="nav menu-info-for-menu">' . $variables['tree'] . '</ul>';
-
-} // menu_tree__menu_info_for_menu()
-
-
-/**
- * Implements hook_block_view_alter().
- */
-function uoficofm_block_view_alter( &$data, $block ) {
-
-	// Check we get the right menu block (side bar)
-	if ( 'menu-info-for-menu' == $block->delta ) {
-
-		//echo '<pre>'; print_r( $data ); echo '</pre>';
-	
-		// change the theme wrapper for the first level
-		//$data['content']['#content']['#theme_wrappers'] = array( 'menu_tree__menu_block__1__level1' );
-	
-	}
-
-}
-
-
-
 
 /**
  * Implements theme_field__field_type().
@@ -143,3 +114,39 @@ function uoficofm_field__taxonomy_term_reference( $variables ) {
 	return $output;
 
 } // uoficofm_field__taxonomy_term_reference()
+
+
+
+function uoficofm_form_alter( &$form, &$form_state, $form_id ) {
+
+	if ( $form_id == 'search_block_form' ) {
+	
+		$form['search_block_form']['#attributes']['placeholder'] = t( 'Enter Search Keyword' );
+	
+	}
+
+} // uoficofm_form_alter()
+
+function uoficofm_preprocess_html( &$variables ) {
+
+	drupal_add_css( 'http://fonts.googleapis.com/css?family=Dosis:300,500,700', array( 'type' => 'external' ) );
+
+} // uoficofm_preprocess_html
+
+
+function uoficofm_breadcrumb( $variables ) {
+
+	$breadcrumb = $variables['breadcrumb'];
+    
+	if ( ! empty( $breadcrumb ) ) {
+
+		$breadcrumb[] 	= drupal_get_title();
+		$output 		= '<div class="breadcrumb">' . implode(' » ', $breadcrumb) . '</div>';
+		
+		return $output;
+
+	}
+
+} // uoficofm_breadcrumb()
+
+

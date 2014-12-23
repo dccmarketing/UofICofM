@@ -1,0 +1,101 @@
+/* ---------- Overlay layout styles ----------- */
+
+body.overlay {
+	color: #3b3b3b;
+}
+
+.overlay {
+	display: none;
+
+	#main,
+	#content {
+		width: auto;
+		float: none;
+	}
+
+	#page {
+		padding: 0 2em;
+	}
+
+	.region-page-top,
+	#header,
+	#page-title,
+	#featured,
+	#sidebar,
+	#triptych-wrapper,
+	#footer-wrapper {
+		display: none;
+	}
+
+	#messages {
+		width: auto;
+	}
+
+	div.add-or-remove-shortcuts {
+		padding-top: 0.8em;
+	}
+
+} // .overlay
+
+.overlay-processed .field-type-image {
+	display: block;
+	float: none;
+}
+
+.node {
+	.content {
+		font-size: 1.071em;
+	}
+
+	.poll {
+		margin: 1.8em 0 1.2em;
+
+		#edit-choice {
+			margin: 0 0 1.2em;
+		}
+
+		.text {
+			margin-right: 6.75em;
+		}
+	} // .poll
+} // .node
+
+
+.poll {
+	.vote-form {
+		text-align: left; /* LTR */
+
+		.choices {
+			margin: 0;
+		}
+	}
+
+	.percent {
+		font-size: 0.857em;
+		font-style: italic;
+		margin-bottom: 3em;
+		margin-top: -3.2em;
+		float: right;
+		text-align: right;
+	}
+
+	.text {
+		clear: right;
+		margin-right: 2.25em;
+	}
+
+	.total {
+		font-size: 0.929em;
+		font-style: italic;
+		text-align: right; /* LTR */
+		clear: both;
+	}
+
+	.bar {
+
+		.foreground {
+			background-color: #666;
+		}
+	}
+
+} // .poll

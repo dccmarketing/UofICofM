@@ -1,0 +1,95 @@
+/* ---------- Admin-specific Theming ---------- */
+
+
+.page-admin {
+
+	#content {
+
+		img {
+			margin-right: 15px; /* LTR */
+		}
+
+		.simpletest-image {
+
+			img {
+				margin: 0;
+			}
+		}
+	}
+
+	#admin-dblog {
+
+		img {
+			margin: 0 5px;
+		}
+	}
+} // .page-admin
+
+.page-admin-structure-block-demo {
+	
+	.block-region {
+		background: #ffff66;
+		border: 1px dotted #9f9e00;
+		color: #000;
+		font: 90% $font__sans;
+		margin: 5px;
+		padding: 5px;
+		text-align: center;
+		text-shadow: none;
+	}
+
+	#featured {
+		.block-region {
+			font-size: 0.55em;
+		}
+	}
+
+	#header {
+
+		.block-region {
+			width: 500px;
+		}
+	}
+}
+
+/* Fix spacing when Seven is used in the overlay. */
+#system-theme-settings {
+	fieldset {
+		padding: 0;
+
+		.fieldset-legend {
+			margin-top: 0;
+		}
+	}
+}
+
+/* Configuration. */
+div.admin .right,
+div.admin .left {
+	width: 49%;
+	margin: 0;
+}
+
+div.admin-panel {
+	background: #fbfbfb;
+	border: 1px solid #ccc;
+	padding: 0 5px 5px;
+	margin: 0 0 10px;
+
+	h3 {
+		margin: 16px 7px;
+	}
+
+	dt {
+		border-top: 1px solid #ccc;
+		padding: 7px 0 0;
+	}
+
+	dd {
+		margin: 0 0 10px;
+	}
+
+	.description {
+		margin: 0 0 14px 7px;
+	}
+}

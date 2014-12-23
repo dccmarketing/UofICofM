@@ -1,0 +1,173 @@
+// Rem output with px fallback
+@mixin font-size( $sizeValue: 1.6 ) {
+	font-size	: ($sizeValue * 10) + px;
+	font-size	: $sizeValue + rem;
+}
+
+// Center block
+@mixin center-block {
+	display	: block;
+	margin	: 0 auto;
+}
+
+@mixin center-all {
+	position 	: absolute;
+	top 		: 50%;
+	left 		: 50%;
+	transform 	: translate(-50%, -50%);
+}
+
+@mixin center-vert {
+	position 	: absolute;
+	top 		: 50%;
+	transform 	: translateY(-50%);
+}
+
+// Clearfix
+@mixin clearfix() {
+	content	: "";
+	display	: table;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+/**
+ * Responsive width
+ *
+ * This is based on a 12 column grid
+ * Margin is constant: 1.666%
+ *
+ * @param   $quantity   How many total columns will there be
+ * @param   $span       How many of grids should this span, default: 1
+ */
+@mixin floatcols( $quantity, $span: 1, $margin: 1.6666666666667 ) {
+
+	$margins	: $quantity * ( $margin * 2 );
+	$boxwidth	: ( 100 - $margins ) / $quantity;
+	$width		: percentage( $boxwidth / 100 );
+
+	@if ( $span > 1 ) {
+		// $width: percentage( ( ( $boxwidth * $span ) - ( $margin * $span ) ) / 100 );
+		$width: percentage( ( ( ( 100 / 12 ) * $span ) - ( $margin * 2 ) ) / 100 );
+	}
+
+	$marginperc	: percentage( $margin / 100 );
+	width		: $width;
+	float		: left;
+	margin-left	: $marginperc;
+	margin-right: $marginperc;
+}
+
+/**
+ * Responsive widths, without margins
+ *
+ * @param 	int 	$quantity 	The total number of columns
+ */
+@mixin evencols( $quantity ) {
+
+	width 			: percentage( ( ( 100 / $quantity ) - 1 ) / 100 );
+	display 		: inline-block;
+	vertical-align 	: top;
+
+} // evencols()
+
+@mixin margcols( $quantity, $span: 1, $margin: 1.66666666666667, $type: 'block' ) {
+
+	$margins	: $quantity * ( $margin * 2 );
+	$boxwidth	: ( 100 - $margins ) / $quantity;
+	$width		: percentage( $boxwidth / 100 );
+
+	@if ( $span > 1 ) {
+		$width: percentage( ( ( ( 100 / $quantity ) * $span ) - ( $margin * 2 ) ) / 100 );
+	}
+
+	$marginperc	 	: percentage( $margin / 100 );
+
+	width			: $width;
+	margin-left	 	: $marginperc;
+	margin-right 	: $marginperc;
+
+	@if ( $type == 'float' ) {
+
+		float: left;
+
+	} @else {
+
+		display 		: inline-block;
+		vertical-align 	: top;
+
+	}
+}
+
+/**
+ * Hides text
+ */
+@mixin hidetext() {
+	text-indent	: 100%;
+	overflow	: hidden;
+	white-space	: nowrap;
+	font-size 	: 0;
+}
+
+/**
+ * Sets the opacity
+ * 
+ * @param 	$opacity 	The amount of opacity you want, default: 0.5
+ */
+@mixin opacity( $opacity: 0.5 ) {
+
+	$ms: $opacity * 100;
+
+	filter 	: Alpha(opacity=$ms);
+	opacity : $opacity;
+}
+
+
+@mixin svgicon( $icon ) {
+
+	$large: 40px;
+	$small: 30px;
+
+	background-image	: url(../images/#{$icon}-orange.svg);
+	background-size		: $large $large;
+	width				: $large;
+	height				: $large;
+	display				: block;
+	background-repeat	: no-repeat;
+	text-decoration		: none;
+	@include hidetext();
+
+	@media screen and (min-width: 768px) {
+		background-size		: $small $small;
+		width				: $small;
+		height				: $small;
+	}
+
+	&:hover {
+		background-image: url(../images/#{$icon}-white.svg);
+	}
+}
+
+
+
+
+
+
+/**
+ * Theme Mixins
+ */
+
+@mixin pagetitle() {
+	font-size 		: 40px;
+	color 			: $color__text-contentblock-title;
+	font-weight 	: 100;
+	text-transform 	: lowercase;
+	margin-bottom 	: 0.25em;
+
+	@media screen and (min-width: 600px) {
+		font-size : 52px;
+	}
+}

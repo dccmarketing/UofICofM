@@ -114,15 +114,8 @@
 	endif;
 
 		?><div id="main" class="clearfix">
-			<div id="content" class="content"><?php
-
-			if ( $breadcrumb) : 
-
-				?><div id="breadcrumb"><?php print $breadcrumb; ?></div><?php 
-
-			endif;
-
-				?><div class="section"><?php
+			<div class="homecontent">
+				<div class="section"><?php
 
 				print render( $title_prefix );
 
@@ -146,21 +139,8 @@
 				} // front page check
 
 				?></div><!-- .section -->
-			</div><!-- .content --><?php
-
-			if ( $page['sidebar_first'] && ! drupal_is_front_page() ) : 
-
-				?><div id="sidebar" class="column sidebar">
-					<div class="section"><?php 
-
-					print render( $page['sidebar_first'] ); 
-
-					?></div><!-- .section -->
-				</div> <!-- .sidebar --><?php
-
-			endif;
-
-		?></div><!-- .main --><?php
+			</div><!-- .content -->
+		</div><!-- .main --><?php
 
 	if ( $page['below_content'] ) :
 		

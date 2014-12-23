@@ -1,0 +1,169 @@
+/**
+ * Global
+ */
+html {
+	height: 100%;
+}
+
+body {
+	height 			: 100%;
+	word-wrap 		: break-word;
+	font-family 	: $font__serif;
+	margin 			: 0 auto;
+	color 			: $color__text-main;
+	font-family 	: $font__sans;
+	line-height 	: $font__line-height-body;
+
+	@include font-size(1.6);
+}
+
+.group {
+
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+.page {
+	height 	: 100%;
+}
+
+.wrap {
+	max-width: $default-width;
+}
+
+a {
+	color 			: $color__text-links;
+	text-decoration : none;
+
+	&:active,
+	&:hover,
+	&:focus {
+		text-decoration : underline;
+		color 			: $color__text-links;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height : 1em;
+	clear 		: both;
+}
+h1 {
+	font-size: 60px;
+}
+
+h2 {
+	font-size: 40px;
+}
+
+h3 {
+	font-size: 32px;
+}
+
+h4 {
+	font-size: 26px;
+}
+
+h5 {
+	font-size: 20px;
+}
+
+h6 {
+	font-size: 16px;
+}
+
+p {
+	margin: 0 0 1.5em;
+}
+del {
+	text-decoration: line-through;
+}
+img {
+	outline : 0;
+	width 	: 100%;
+}
+samp,
+var {
+	padding 	: 0 0.4em;
+	font-family : $font__mono;
+}
+code {
+	background-color: $color__bg-mono-text;
+	padding 		: 0 0.4em;
+	font-family 	: $font__mono;
+
+	var {
+		background-color: transparent;
+	}
+}
+.description code {
+	font-size: 1em;
+}
+kbd {
+	background-color: $color__bg-mono-text;
+	border 			: 1px outset #575757;
+	margin 			: 0 3px;
+	display 		: inline-block;
+	border-radius 	: 5px;
+	padding 		: 0 0.5em;
+	font-family 	: $font__mono;
+
+	kbd,
+	samp {
+		background-color: transparent;
+	}
+}
+pre {
+	background-color: $color__bg-mono-text;
+	margin 			: 10px 0;
+	overflow 		: hidden;
+	padding 		: 1em;
+	white-space 	: pre-wrap;
+	font-family 	: $font__mono;
+
+	code,
+	kbd,
+	samp,
+	var {
+		background-color: transparent;
+		padding: 0;
+	}
+}
+
+ul, ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+dialog {
+	position: inherit;
+	display : inherit;
+	border 	: none;
+}
